@@ -3,11 +3,22 @@
   
 <servlet>
 	<servlet-name>add</servlet-name>
-	<servlet-class>demo.AddSevelet</servlet-class>
+	<servlet-class>demo.AddServelet</servlet-class>
 </servlet>
 
 <servlet-mapping>
 	<servlet-name>add</servlet-name>
 	<url-pattern>/add</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>pqr</servlet-name>
+	<servlet-class>demo.SqServelet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>pqr</servlet-name>
+	<url-pattern>/url</url-pattern>
 </servlet-mapping>
 </web-app>
