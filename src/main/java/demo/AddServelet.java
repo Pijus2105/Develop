@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,14 +21,18 @@ public class AddServelet extends HttpServlet {
 		
 		int Add = i+j;
 		
-		HttpSession session = req.getSession();
-		session.setAttribute("Add", Add);
+		
+		Cookie cookie = new Cookie("p", Add + "");
+		res.addCookie(cookie);
+		
+		// 3. HttpSession session = req.getSession();
+		// session.setAttribute("Add", Add);
 		
 		res.sendRedirect("url");
 		
-		//res.sendRedirect("url?parameter="+Add);
+		//2. res.sendRedirect("url?parameter="+Add);
 		
-//		req.setAttribute("k", k);
+//	1.	req.setAttribute("k", k);
 //	    jakarta.servlet.RequestDispatcher rq = req.getRequestDispatcher("sq");
 //		rq.forward(req, res);
 		
